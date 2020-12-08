@@ -1,6 +1,6 @@
 <?php
 /**
- * WP Bootstrap Starter Theme Customizer
+ * WP Accessible Starter Theme Customizer
  *
  * @package WP_Bootstrap_Starter
  */
@@ -15,14 +15,14 @@ function themeslug_sanitize_checkbox( $checked ) {
     return ( ( isset( $checked ) && true == $checked ) ? true : false );
 }
 
-function wp_bootstrap_starter_customize_register( $wp_customize ) {
+function wp_accessible_starter_customize_register( $wp_customize ) {
 
     //Style Preset
     $wp_customize->add_section(
         'typography',
         array(
-            'title' => __( 'Preset Styles', 'wp-bootstrap-starter' ),
-            //'description' => __( 'This is a section for the typography', 'wp-bootstrap-starter' ),
+            'title' => __( 'Preset Styles', 'wp-accessible-starter' ),
+            //'description' => __( 'This is a section for the typography', 'wp-accessible-starter' ),
             'priority' => 20,
         )
     );
@@ -35,7 +35,7 @@ function wp_bootstrap_starter_customize_register( $wp_customize ) {
         'sanitize_callback' => 'wp_filter_nohtml_kses',
     ) );
     $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'preset_style_setting', array(
-        'label' => __( 'Typography', 'wp-bootstrap-starter' ),
+        'label' => __( 'Typography', 'wp-accessible-starter' ),
         'section'    => 'typography',
         'settings'   => 'preset_style_setting',
         'type'    => 'select',
@@ -65,7 +65,7 @@ function wp_bootstrap_starter_customize_register( $wp_customize ) {
             $wp_customize,
             'navbar_bg_color',
             array(
-                'label'      => __( 'Navigation Background Color', 'wp-bootstrap-starter' ),
+                'label'      => __( 'Navigation Background Color', 'wp-accessible-starter' ),
                 'section'    => 'typography',
                 'settings'   => 'navbar_bg_color_setting',
             ) )
@@ -83,7 +83,7 @@ function wp_bootstrap_starter_customize_register( $wp_customize ) {
             $wp_customize,
             'navbar_text_color',
             array(
-                'label'      => __( 'Navigation Text Color', 'wp-bootstrap-starter' ),
+                'label'      => __( 'Navigation Text Color', 'wp-accessible-starter' ),
                 'section'    => 'typography',
                 'settings'   => 'navbar_text_color_setting',
             ) )
@@ -101,7 +101,7 @@ function wp_bootstrap_starter_customize_register( $wp_customize ) {
             $wp_customize,
             'footer_bg_color',
             array(
-                'label'      => __( 'Footer Background Color', 'wp-bootstrap-starter' ),
+                'label'      => __( 'Footer Background Color', 'wp-accessible-starter' ),
                 'section'    => 'typography',
                 'settings'   => 'footer_bg_color_setting',
             ) )
@@ -119,7 +119,7 @@ function wp_bootstrap_starter_customize_register( $wp_customize ) {
             $wp_customize,
             'footer_text_color',
             array(
-                'label'      => __( 'Footer Text Color', 'wp-bootstrap-starter' ),
+                'label'      => __( 'Footer Text Color', 'wp-accessible-starter' ),
                 'section'    => 'typography',
                 'settings'   => 'footer_text_color_setting',
             ) )
@@ -131,7 +131,7 @@ function wp_bootstrap_starter_customize_register( $wp_customize ) {
     ) );
     $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'navigation_full_width', array(
         'settings' => 'navigation_full_width',
-        'label'    => __('Enable navigation full-width', 'wp-bootstrap-starter'),
+        'label'    => __('Enable navigation full-width', 'wp-accessible-starter'),
         'section'    => 'typography',
         'type'     => 'checkbox',
     ) ) );
@@ -142,7 +142,7 @@ function wp_bootstrap_starter_customize_register( $wp_customize ) {
     ) );
     $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'sidebar_page_disable', array(
         'settings' => 'sidebar_page_disable',
-        'label'    => __('Disable sidebar at page', 'wp-bootstrap-starter'),
+        'label'    => __('Disable sidebar at page', 'wp-accessible-starter'),
         'section'    => 'typography',
         'type'     => 'checkbox',
     ) ) );
@@ -152,9 +152,9 @@ function wp_bootstrap_starter_customize_register( $wp_customize ) {
     $wp_customize->add_section(
         'header_image',
         array(
-            'title' => __( 'Header Banner', 'wp-bootstrap-starter' ),
+            'title' => __( 'Header Banner', 'wp-accessible-starter' ),
             'priority' => 30,
-            'description' => __( 'To enable the carousel add 2 images or more:', 'wp-bootstrap-starter' ),
+            'description' => __( 'To enable the carousel add 2 images or more:', 'wp-accessible-starter' ),
         )
     );
 
@@ -162,7 +162,7 @@ function wp_bootstrap_starter_customize_register( $wp_customize ) {
     $wp_customize->add_control(
         'header_img',
         array(
-            'label' => __( 'Header Image', 'wp-bootstrap-starter' ),
+            'label' => __( 'Header Image', 'wp-accessible-starter' ),
             'section' => 'header_images',
             'type' => 'text',
         )
@@ -180,29 +180,29 @@ function wp_bootstrap_starter_customize_register( $wp_customize ) {
             $wp_customize,
             'header_bg_color',
             array(
-                'label'      => __( 'Header Banner Background Color', 'wp-bootstrap-starter' ),
+                'label'      => __( 'Header Banner Background Color', 'wp-accessible-starter' ),
                 'section'    => 'header_image',
                 'settings'   => 'header_bg_color_setting',
             ) )
     );
 
     $wp_customize->add_setting( 'header_banner_title_setting', array(
-        'default' => __( 'WP Bootstrap Framework', 'wp-bootstrap-starter' ),
+        'default' => __( 'WP Bootstrap Framework', 'wp-accessible-starter' ),
         'sanitize_callback' => 'wp_filter_nohtml_kses',
     ) );
     $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'header_banner_title_setting', array(
-        'label' => __( 'Banner Title', 'wp-bootstrap-starter' ),
+        'label' => __( 'Banner Title', 'wp-accessible-starter' ),
         'section'    => 'header_image',
         'settings'   => 'header_banner_title_setting',
         'type' => 'text'
     ) ) );
 
     $wp_customize->add_setting( 'header_banner_tagline_setting', array(
-        'default' => __( 'To customize the contents of this header banner and other elements of your site go to Dashboard - Appearance - Customize','wp-bootstrap-starter' ),
+        'default' => __( 'To customize the contents of this header banner and other elements of your site go to Dashboard - Appearance - Customize','wp-accessible-starter' ),
         'sanitize_callback' => 'wp_filter_nohtml_kses',
     ) );
     $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'header_banner_tagline_setting', array(
-        'label' => __( 'Banner Tagline', 'wp-bootstrap-starter' ),
+        'label' => __( 'Banner Tagline', 'wp-accessible-starter' ),
         'section'    => 'header_image',
         'settings'   => 'header_banner_tagline_setting',
         'type' => 'text'
@@ -213,7 +213,7 @@ function wp_bootstrap_starter_customize_register( $wp_customize ) {
     ) );
     $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'header_banner_visibility', array(
         'settings' => 'header_banner_visibility',
-        'label'    => __('Remove Header Banner', 'wp-bootstrap-starter'),
+        'label'    => __('Remove Header Banner', 'wp-accessible-starter'),
         'section'    => 'header_image',
         'type'     => 'checkbox',
     ) ) );
@@ -222,8 +222,8 @@ function wp_bootstrap_starter_customize_register( $wp_customize ) {
    $wp_customize->add_section(
         'accessibility',
         array(
-            'title' => __( 'Accessibility', 'wp-bootstrap-starter' ),
-            //'description' => __( 'This is a section for the header banner Image.', 'wp-bootstrap-starter' ),
+            'title' => __( 'Accessibility', 'wp-accessible-starter' ),
+            //'description' => __( 'This is a section for the header banner Image.', 'wp-accessible-starter' ),
             'priority' => 110,
         )
     );
@@ -234,7 +234,7 @@ function wp_bootstrap_starter_customize_register( $wp_customize ) {
     ) );
     $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'navbar_acessibility', array(
         'settings' => 'navbar_acessibility',
-        'label'    => __('Enable accessible navigation bar', 'wp-bootstrap-starter'),
+        'label'    => __('Enable accessible navigation bar', 'wp-accessible-starter'),
         'section'    => 'accessibility',
         'type'     => 'checkbox',
     ) ) );
@@ -245,7 +245,7 @@ function wp_bootstrap_starter_customize_register( $wp_customize ) {
     ) );
     $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'vlibras', array(
         'settings' => 'vlibras',
-        'label'    => __('Enable VLibras', 'wp-bootstrap-starter'),
+        'label'    => __('Enable VLibras', 'wp-accessible-starter'),
         'section'    => 'accessibility',
         'type'     => 'checkbox',
     ) ) );
@@ -255,16 +255,16 @@ function wp_bootstrap_starter_customize_register( $wp_customize ) {
    $wp_customize->add_section(
         'site_name_text_color',
         array(
-            'title' => __( 'Other Customizations', 'wp-bootstrap-starter' ),
-            //'description' => __( 'This is a section for the header banner Image.', 'wp-bootstrap-starter' ),
+            'title' => __( 'Other Customizations', 'wp-accessible-starter' ),
+            //'description' => __( 'This is a section for the header banner Image.', 'wp-accessible-starter' ),
             'priority' => 40,
         )
     );
     $wp_customize->add_section(
         'colors',
         array(
-            'title' => __( 'Background Color', 'wp-bootstrap-starter' ),
-            //'description' => __( 'This is a section for the header banner Image.', 'wp-bootstrap-starter' ),
+            'title' => __( 'Background Color', 'wp-accessible-starter' ),
+            //'description' => __( 'This is a section for the header banner Image.', 'wp-accessible-starter' ),
             'priority' => 50,
             'panel' => 'styling_option_panel',
         )
@@ -272,8 +272,8 @@ function wp_bootstrap_starter_customize_register( $wp_customize ) {
     $wp_customize->add_section(
         'background_image',
         array(
-            'title' => __( 'Background Image', 'wp-bootstrap-starter' ),
-            //'description' => __( 'This is a section for the header banner Image.', 'wp-bootstrap-starter' ),
+            'title' => __( 'Background Image', 'wp-accessible-starter' ),
+            //'description' => __( 'This is a section for the header banner Image.', 'wp-accessible-starter' ),
             'priority' => 60,
             'panel' => 'styling_option_panel',
         )
@@ -281,20 +281,20 @@ function wp_bootstrap_starter_customize_register( $wp_customize ) {
 
     // Bootstrap and Fontawesome Option
     $wp_customize->add_setting( 'cdn_assets_setting', array(
-        'default' => __( 'no','wp-bootstrap-starter' ),
+        'default' => __( 'no','wp-accessible-starter' ),
         'sanitize_callback' => 'wp_filter_nohtml_kses',
     ) );
     $wp_customize->add_control( 
         'cdn_assets',
         array(
-            'label' => __( 'Use CDN for Assets', 'wp-bootstrap-starter' ),
-            'description' => __( 'All Bootstrap Assets and FontAwesome will be loaded in CDN.', 'wp-bootstrap-starter' ),
+            'label' => __( 'Use CDN for Assets', 'wp-accessible-starter' ),
+            'description' => __( 'All Bootstrap Assets and FontAwesome will be loaded in CDN.', 'wp-accessible-starter' ),
             'section' => 'site_name_text_color',
             'settings' => 'cdn_assets_setting',
 	        'type'    => 'select',
 	        'choices' => array(
-	            'yes' => __( 'Yes', 'wp-bootstrap-starter' ),
-	            'no' => __( 'No', 'wp-bootstrap-starter' ),
+	            'yes' => __( 'Yes', 'wp-accessible-starter' ),
+	            'no' => __( 'No', 'wp-accessible-starter' ),
         	)
         )
     );
@@ -308,21 +308,21 @@ function wp_bootstrap_starter_customize_register( $wp_customize ) {
     $wp_customize->get_control( 'background_color'  )->section = 'site_name_text_color';
 
     // Add control for logo uploader
-    $wp_customize->add_setting( 'wp_bootstrap_starter_logo', array(
-        //'default' => __( '', 'wp-bootstrap-starter' ),
+    $wp_customize->add_setting( 'wp_accessible_starter_logo', array(
+        //'default' => __( '', 'wp-accessible-starter' ),
         'sanitize_callback' => 'esc_url',
     ) );
-    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'wp_bootstrap_starter_logo', array(
-        'label'    => __( 'Upload Logo (replaces text)', 'wp-bootstrap-starter' ),
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'wp_accessible_starter_logo', array(
+        'label'    => __( 'Upload Logo (replaces text)', 'wp-accessible-starter' ),
         'section'  => 'title_tagline',
-        'settings' => 'wp_bootstrap_starter_logo',
+        'settings' => 'wp_accessible_starter_logo',
     ) ) );
 
 }
-add_action( 'customize_register', 'wp_bootstrap_starter_customize_register' );
+add_action( 'customize_register', 'wp_accessible_starter_customize_register' );
 
-add_action( 'wp_head', 'wp_bootstrap_starter_customizer_css');
-function wp_bootstrap_starter_customizer_css()
+add_action( 'wp_head', 'wp_accessible_starter_customizer_css');
+function wp_accessible_starter_customizer_css()
 
 {
     $header_bg_color = get_theme_mod('header_bg_color_setting', '#fff');
@@ -356,7 +356,7 @@ function wp_bootstrap_starter_customizer_css()
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
-function wp_bootstrap_starter_customize_preview_js() {
-    wp_enqueue_script( 'wp_bootstrap_starter_customizer', get_template_directory_uri() . '/inc/assets/js/customizer.js', array( 'customize-preview' ), '20151215', true );
+function wp_accessible_starter_customize_preview_js() {
+    wp_enqueue_script( 'wp_accessible_starter_customizer', get_template_directory_uri() . '/inc/assets/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
-add_action( 'customize_preview_init', 'wp_bootstrap_starter_customize_preview_js' );
+add_action( 'customize_preview_init', 'wp_accessible_starter_customize_preview_js' );

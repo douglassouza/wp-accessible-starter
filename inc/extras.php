@@ -13,7 +13,7 @@
  * @param array $classes Classes for the body element.
  * @return array
  */
-function wp_bootstrap_starter_body_classes( $classes ) {
+function wp_accessible_starter_body_classes( $classes ) {
 	// Adds a class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
@@ -26,15 +26,15 @@ function wp_bootstrap_starter_body_classes( $classes ) {
 
 	return $classes;
 }
-add_filter( 'body_class', 'wp_bootstrap_starter_body_classes' );
+add_filter( 'body_class', 'wp_accessible_starter_body_classes' );
 
 /**
  * Add a pingback url auto-discovery header for singularly identifiable articles.
  */
-function wp_bootstrap_starter_pingback_header() {
+function wp_accessible_starter_pingback_header() {
 	echo '<link rel="pingback" href="', esc_url( get_bloginfo( 'pingback_url' ) ), '">';
 }
-add_action( 'wp_head', 'wp_bootstrap_starter_pingback_header' );
+add_action( 'wp_head', 'wp_accessible_starter_pingback_header' );
 
 
 function fixbug_accessibility( $content ) {

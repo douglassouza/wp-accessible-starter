@@ -23,7 +23,7 @@
 
 		if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php wp_bootstrap_starter_posted_on(); ?>
+			<?php wp_accessible_starter_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php
 		endif; ?>
@@ -33,17 +33,17 @@
         if ( is_single() ) :
 			the_content();
         else :
-            the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'wp-bootstrap-starter' ) );
+            the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'wp-accessible-starter' ) );
         endif;
 
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'wp-bootstrap-starter' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'wp-accessible-starter' ),
 				'after'  => '</div>',
 			) );
 		?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php wp_bootstrap_starter_entry_footer(); ?>
+		<?php wp_accessible_starter_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

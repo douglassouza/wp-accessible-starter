@@ -1,4 +1,4 @@
-=== WP Bootstrap Starter ===
+=== WP Accessible Starter ===
 
 Tags: blog, custom-menu, featured-images, threaded-comments, translation-ready, right-sidebar, custom-background, e-commerce, theme-options, sticky-post, full-width-template
 Requires at least: 4.0
@@ -46,7 +46,7 @@ This theme will be an active project which we will update from time to time. Che
 
 = Does this theme support any plugins? =
 
-WP Bootstrap Starter includes support for Infinite Scroll in Jetpack.
+WP Accessible Starter includes support for Infinite Scroll in Jetpack.
 
 == Credits ==
 
@@ -103,7 +103,7 @@ WP Bootstrap Starter includes support for Infinite Scroll in Jetpack.
 * Fix the sorting isssue on Woocommerce Shop Page
 
 = 3.2.6 - August 15, 2019 =
-* wp-bootstrap-starter/woocommerce/cart/cart.php version 3.5.0 is out of date. The core version is 3.7.0
+* wp-accessible-starter/woocommerce/cart/cart.php version 3.5.0 is out of date. The core version is 3.7.0
 * Remove duplicate link - pingback tag on header.php
 * Remove the condition on extras.php for the link - pingback tag
 
@@ -453,7 +453,7 @@ WP Bootstrap Starter includes support for Infinite Scroll in Jetpack.
 * Fix the broken sidebar in the search.php
 
 = 1.2 - Nov 23, 2016 =
-* Change the theme name to WP Bootstrap Starter
+* Change the theme name to WP Accessible Starter
 
 = 1.0 - Nov 13, 2016 =
 * Initial release

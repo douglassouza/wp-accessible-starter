@@ -44,16 +44,16 @@
             </nav>
         <?php endif; ?>
         <!--
-        <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'wp-bootstrap-starter'); ?></a>
+        <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'wp-accessible-starter'); ?></a>
         -->
         <?php if (!is_page_template('blank-page.php') && !is_page_template('blank-page-with-container.php')) : ?>
             <header id="masthead" class="site-header navbar-static-top sticky-top" role="banner">
                 <div class="container<?= get_theme_mod('navigation_full_width') ? '-fluid' : ''; ?>">
                     <nav id="nav" class="navbar navbar-expand-lg p-0">
                         <div class="navbar-brand">
-                            <?php if (get_theme_mod('wp_bootstrap_starter_logo')) : ?>
+                            <?php if (get_theme_mod('wp_accessible_starter_logo')) : ?>
                                 <a href="<?php echo esc_url(home_url('/')); ?>">
-                                    <img src="<?php echo esc_url(get_theme_mod('wp_bootstrap_starter_logo')); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>">
+                                    <img src="<?php echo esc_url(get_theme_mod('wp_accessible_starter_logo')); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>">
                                 </a>
                             <?php else : ?>
                                 <a class="site-title" href="<?php echo esc_url(home_url('/')); ?>"><?php esc_url(bloginfo('name')); ?></a>
@@ -115,11 +115,11 @@
                         </div>
                         <a class="carousel-control-prev" href="#carouselHeader" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only"><?= __('Previous', 'wp-bootstrap-starter'); ?></span>
+                            <span class="sr-only"><?= __('Previous', 'wp-accessible-starter'); ?></span>
                         </a>
                         <a class="carousel-control-next" href="#carouselHeader" role="button" data-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only"><?= __('Next', 'wp-bootstrap-starter'); ?></span>
+                            <span class="sr-only"><?= __('Next', 'wp-accessible-starter'); ?></span>
                         </a>
                     </div>
                 <?php else : ?>
