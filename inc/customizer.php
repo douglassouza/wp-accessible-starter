@@ -125,28 +125,6 @@ function wp_accessible_starter_customize_register( $wp_customize ) {
             ) )
     );
 
-    $wp_customize->add_setting( 'navigation_full_width', array(
-        'capability' => 'edit_theme_options',
-        'sanitize_callback' => 'themeslug_sanitize_checkbox',
-    ) );
-    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'navigation_full_width', array(
-        'settings' => 'navigation_full_width',
-        'label'    => __('Enable navigation full-width', 'wp-accessible-starter'),
-        'section'    => 'typography',
-        'type'     => 'checkbox',
-    ) ) );
-
-    $wp_customize->add_setting( 'sidebar_page_disable', array(
-        'capability' => 'edit_theme_options',
-        'sanitize_callback' => 'themeslug_sanitize_checkbox',
-    ) );
-    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'sidebar_page_disable', array(
-        'settings' => 'sidebar_page_disable',
-        'label'    => __('Disable sidebar at page', 'wp-accessible-starter'),
-        'section'    => 'typography',
-        'type'     => 'checkbox',
-    ) ) );
-
 
     /*Banner*/
     $wp_customize->add_section(
@@ -278,6 +256,42 @@ function wp_accessible_starter_customize_register( $wp_customize ) {
             'panel' => 'styling_option_panel',
         )
     );
+
+    // Navbar Sticky Top
+    $wp_customize->add_setting( 'navigation_sticky_top', array(
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'themeslug_sanitize_checkbox',
+    ) );
+    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'navigation_sticky_top', array(
+        'settings' => 'navigation_sticky_top',
+        'label'    => __('Enable navigation sticky top', 'wp-accessible-starter'),
+        'section'    => 'site_name_text_color',
+        'type'     => 'checkbox',
+    ) ) );
+
+    // Navbar Full Widt
+    $wp_customize->add_setting( 'navigation_full_width', array(
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'themeslug_sanitize_checkbox',
+    ) );
+    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'navigation_full_width', array(
+        'settings' => 'navigation_full_width',
+        'label'    => __('Enable navigation full-width', 'wp-accessible-starter'),
+        'section'    => 'site_name_text_color',
+        'type'     => 'checkbox',
+    ) ) );
+
+    // Sidebar Page Disable
+    $wp_customize->add_setting( 'sidebar_page_disable', array(
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'themeslug_sanitize_checkbox',
+    ) );
+    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'sidebar_page_disable', array(
+        'settings' => 'sidebar_page_disable',
+        'label'    => __('Disable sidebar at page', 'wp-accessible-starter'),
+        'section'    => 'site_name_text_color',
+        'type'     => 'checkbox',
+    ) ) );
 
     // Bootstrap and Fontawesome Option
     $wp_customize->add_setting( 'cdn_assets_setting', array(

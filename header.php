@@ -47,7 +47,7 @@
         <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'wp-accessible-starter'); ?></a>
         -->
         <?php if (!is_page_template('blank-page.php') && !is_page_template('blank-page-with-container.php')) : ?>
-            <header id="masthead" class="site-header navbar-static-top sticky-top" role="banner">
+            <header id="masthead" class="site-header navbar-static-top <?= get_theme_mod('navigation_sticky_top') ? 'sticky-top' : ''; ?>" role="banner">
                 <div class="container<?= get_theme_mod('navigation_full_width') ? '-fluid' : ''; ?>">
                     <nav id="nav" class="navbar navbar-expand-lg p-0">
                         <div class="navbar-brand">
