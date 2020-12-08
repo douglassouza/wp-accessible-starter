@@ -5,7 +5,7 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area col-sm-12 col-md-12 col-lg-<?= !get_theme_mod('sidebar_page_disable') && is_active_sidebar( 'sidebar-1' ) ? '8' : '12'; ?>">
+	<section id="primary" class="content-area px-0 col-sm-12 col-md-12 col-lg-<?= !get_theme_mod('sidebar_page_disable') && is_active_sidebar( 'sidebar-1' ) ? '8' : '12'; ?>">
 		<div id="main" class="site-main" role="main">
 
 			<?php

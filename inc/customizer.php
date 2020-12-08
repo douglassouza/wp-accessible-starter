@@ -360,7 +360,6 @@ function wp_accessible_starter_customizer_css()
         header#masthead { 
             background-color: <?php echo esc_attr( $navbar_bg_color ); ?>;
             color: <?php echo esc_attr( $navbar_text_color ); ?>;
-            border-bottom: 2px solid <?php echo esc_attr( $footer_bg_color ); ?>;
         }
     </style>
     <?php
