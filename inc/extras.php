@@ -38,7 +38,8 @@ add_action( 'wp_head', 'wp_accessible_starter_pingback_header' );
 
 
 function fixbug_accessibility( $content ) {
-    $content = str_replace('<p></p>', '', $content);
+	$content = str_replace('<p></p>', '', $content);
+	$content = str_replace('<ul></ul>', '', $content);
     $content = str_replace('class="wp-block-group"', 'tabindex= "0" class="wp-block-group"', $content);
     $content = str_replace('class="wp-block-group ', 'tabindex= "0" class="wp-block-group ', $content);
     $content = str_replace('<p role="status" aria-live="polite" aria-atomic="true"></p>', '<p role="status" aria-live="polite" aria-atomic="true">Formulario</p>', $content);

@@ -238,7 +238,13 @@ function wp_accessible_starter_scripts() {
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
-	}
+    }
+    
+    if(get_theme_mod('high-contrast-accessibility')) {
+        wp_enqueue_style( 'style-high-contrast', get_template_directory_uri() . '/inc/assets/css/high-contrast.css');
+        wp_enqueue_script( 'script-high-contrast', get_template_directory_uri() . '/inc/assets/js/high-contrast.js', array(), '', true);
+    }
+
 }
 add_action( 'wp_enqueue_scripts', 'wp_accessible_starter_scripts' );
 

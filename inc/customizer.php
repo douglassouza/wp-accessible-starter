@@ -228,6 +228,16 @@ function wp_accessible_starter_customize_register( $wp_customize ) {
         'type'     => 'checkbox',
     ) ) );
 
+    $wp_customize->add_setting( 'high-contrast-accessibility', array(
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'themeslug_sanitize_checkbox',
+    ) );
+    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'high-contrast-accessibility', array(
+        'settings' => 'high-contrast-accessibility',
+        'label'    => __('Enable High Contrast', 'wp-accessible-starter'),
+        'section'    => 'accessibility',
+        'type'     => 'checkbox',
+    ) ) );
 
     //Site Name Text Color
    $wp_customize->add_section(
