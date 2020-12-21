@@ -239,6 +239,19 @@ function wp_accessible_starter_customize_register( $wp_customize ) {
         'type'     => 'checkbox',
     ) ) );
 
+    
+    /*edit_theme_options*/
+    $wp_customize->add_setting( 'mode_maintenance', array(
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'themeslug_sanitize_checkbox',
+    ) );
+    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'mode_maintenance', array(
+        'settings' => 'mode_maintenance',
+        'label'    => __('Enable mode maintenance', 'wp-accessible-starter'),
+        'section'    => 'site_name_text_color',
+        'type'     => 'checkbox',
+    ) ) );
+
     //Site Name Text Color
    $wp_customize->add_section(
         'site_name_text_color',
@@ -302,27 +315,6 @@ function wp_accessible_starter_customize_register( $wp_customize ) {
         'section'    => 'site_name_text_color',
         'type'     => 'checkbox',
     ) ) );
-
-    // Bootstrap and Fontawesome Option
-    $wp_customize->add_setting( 'cdn_assets_setting', array(
-        'default' => __( 'no','wp-accessible-starter' ),
-        'sanitize_callback' => 'wp_filter_nohtml_kses',
-    ) );
-    $wp_customize->add_control( 
-        'cdn_assets',
-        array(
-            'label' => __( 'Use CDN for Assets', 'wp-accessible-starter' ),
-            'description' => __( 'All Bootstrap Assets and FontAwesome will be loaded in CDN.', 'wp-accessible-starter' ),
-            'section' => 'site_name_text_color',
-            'settings' => 'cdn_assets_setting',
-	        'type'    => 'select',
-	        'choices' => array(
-	            'yes' => __( 'Yes', 'wp-accessible-starter' ),
-	            'no' => __( 'No', 'wp-accessible-starter' ),
-        	)
-        )
-    );
-
 
     $wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
     $wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';

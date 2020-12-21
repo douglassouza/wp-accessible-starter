@@ -248,29 +248,6 @@ function wp_accessible_starter_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'wp_accessible_starter_scripts' );
 
-
-
-/**
- * Add Preload for CDN scripts and stylesheet
- */
-function wp_accessible_starter_preload( $hints, $relation_type ){
-    if ( 'preconnect' === $relation_type && get_theme_mod( 'cdn_assets_setting' ) === 'yes' ) {
-        $hints[] = [
-            'href'        => 'https://cdn.jsdelivr.net/',
-            'crossorigin' => 'anonymous',
-        ];
-        $hints[] = [
-            'href'        => 'https://use.fontawesome.com/',
-            'crossorigin' => 'anonymous',
-        ];
-    }
-    return $hints;
-} 
-
-add_filter( 'wp_resource_hints', 'wp_accessible_starter_preload', 10, 2 );
-
-
-
 function wp_accessible_starter_password_form() {
     global $post;
     $label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
@@ -318,7 +295,7 @@ if ( ! class_exists( 'wp_bootstrap_navwalker' )) {
 
 // Activate WordPress Maintenance Mode
 function wp_maintenance_mode() {
-    if (!current_user_can('edit_themes') || !is_user_logged_in()) {
+    if (get_theme_mod('mode_maintenance') && (!current_user_can('edit_themes') || !is_user_logged_in())) {
         wp_die('<h1>' . __('Under Maintenance', 'wp-accessible-starter') . '</h1><br />' . __("Something ain't right, but we're working on it! Check back later.", 'wp-accessible-starter'));
     }
 }
