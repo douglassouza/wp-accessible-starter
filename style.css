@@ -28,8 +28,9 @@ Tags: blog, custom-menu, featured-images, threaded-comments, translation-ready, 
 # Clearings
 # Widgets
 # Content
-	## Posts and pages
-	## Comments
+  ## Posts and pages
+  ## Comments
+  ## Groups
 # Infinite scroll
 # Media
 	## Captions
@@ -724,10 +725,7 @@ a img.aligncenter {
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
-#content.site-content {
-  padding-bottom: 3.75rem;
-  padding-top: 4.125rem;
-}
+
 
 .sticky .entry-title::before {
   content: '\f08d';
@@ -772,6 +770,11 @@ a img.aligncenter {
   color: #9a9a9a;
 }
 
+.page .entry-header .entry-title {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 .entry-title > a {
   color: inherit;
 }
@@ -810,6 +813,41 @@ a img.aligncenter {
 
 .comment-list .pingback:first-child {
   border: medium none;
+}
+
+/*--------------------------------------------------------------
+## Groups
+--------------------------------------------------------------*/
+.wp-block-group > .wp-block-group__inner-container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .wp-block-group > .wp-block-group__inner-container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .wp-block-group > .wp-block-group__inner-container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .wp-block-group > .wp-block-group__inner-container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .wp-block-group > .wp-block-group__inner-container {
+    max-width: 1140px;
+  }
 }
 
 /*--------------------------------------------------------------

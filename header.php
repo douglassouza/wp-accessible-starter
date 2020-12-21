@@ -147,7 +147,7 @@
                     </div>
                 <?php endif; ?>
             <?php endif; ?>
-            <div id="content" class="site-content link-anchor pb-0 pt-3">
+            <div id="content" class="site-content">
                 <div class="container<?= is_page_template('fullwidth.php') ? '-fluid' : ''; ?>">
                     <div class="row">
                     <?php endif; ?>

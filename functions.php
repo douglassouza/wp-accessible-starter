@@ -315,3 +315,11 @@ require get_template_directory() . '/inc/plugin-compatibility/plugin-compatibili
 if ( ! class_exists( 'wp_bootstrap_navwalker' )) {
     require_once(get_template_directory() . '/inc/wp_bootstrap_navwalker.php');
 }
+
+// Activate WordPress Maintenance Mode
+function wp_maintenance_mode() {
+    if (!current_user_can('edit_themes') || !is_user_logged_in()) {
+        wp_die('<h1>' . __('Under Maintenance', 'wp-accessible-starter') . '</h1><br />' . __("Something ain't right, but we're working on it! Check back later.", 'wp-accessible-starter'));
+    }
+}
+add_action('get_header', 'wp_maintenance_mode');
