@@ -36,12 +36,12 @@
     ?>
 
     <div id="page" class="site">
-        <?php if (get_theme_mod('navbar_acessibility')) : ?>
+        <?php if (!get_theme_mod('navbar_acessibility')) : ?>
             <nav id="nav-accessibility" class="accessibility nav d-none d-lg-block">
                 <a class="py-1 px-3" href="#content" accesskey="1">Ir para o conteúdo principal</a>
                 <a class="py-1 px-3" href="#nav" accesskey="2">Ir para o menu</a>
                 <a class="py-1 px-3" href="#colophon" accesskey="3">Ir para o rodapé</a>
-                <?php if(get_theme_mod('high-contrast-accessibility')): ?>
+                <?php if(!get_theme_mod('high-contrast-accessibility')): ?>
                     <a class="py-1 px-3" href="#" id="btn-contrast" accesskey="4">Alto Contraste</a>
                 <?php endif; ?>
             </nav>
