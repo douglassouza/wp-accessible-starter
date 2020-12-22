@@ -68,7 +68,7 @@ function wp_accessible_starter_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
         'navbar_bg_color_setting',
         array(
-            'default'     => '#563d7c',
+            'default'     => '#0066ff',
             'sanitize_callback' => 'sanitize_hex_color',
         )
     );
@@ -122,7 +122,7 @@ function wp_accessible_starter_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
         'footer_text_color_setting',
         array(
-            'default'     => '#99979c',
+            'default'     => '#707070',
             'sanitize_callback' => 'sanitize_hex_color',
         )
     );
