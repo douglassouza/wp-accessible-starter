@@ -17,6 +17,7 @@ function themeslug_sanitize_checkbox( $checked ) {
 
 function wp_accessible_starter_customize_register( $wp_customize ) {
 
+    /* Title Tagline */
     $wp_customize->add_setting( 'footer_copyright_description', array(
         'default' => __( 'Accessible Bootstrap  WordPress Theme', 'wp-accessible-starter' ),
         'sanitize_callback' => 'wp_filter_nohtml_kses',
@@ -207,7 +208,7 @@ function wp_accessible_starter_customize_register( $wp_customize ) {
         'type'     => 'checkbox',
     ) ) );
 
-    //Accessibility
+    /* Accessibility */
    $wp_customize->add_section(
         'accessibility',
         array(
@@ -224,17 +225,6 @@ function wp_accessible_starter_customize_register( $wp_customize ) {
     $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'navbar_acessibility', array(
         'settings' => 'navbar_acessibility',
         'label'    => __('Enable accessible navigation bar', 'wp-accessible-starter'),
-        'section'    => 'accessibility',
-        'type'     => 'checkbox',
-    ) ) );
-
-    $wp_customize->add_setting( 'vlibras', array(
-        'capability' => 'edit_theme_options',
-        'sanitize_callback' => 'themeslug_sanitize_checkbox',
-    ) );
-    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'vlibras', array(
-        'settings' => 'vlibras',
-        'label'    => __('Enable VLibras', 'wp-accessible-starter'),
         'section'    => 'accessibility',
         'type'     => 'checkbox',
     ) ) );
