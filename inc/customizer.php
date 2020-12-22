@@ -17,6 +17,17 @@ function themeslug_sanitize_checkbox( $checked ) {
 
 function wp_accessible_starter_customize_register( $wp_customize ) {
 
+    $wp_customize->add_setting( 'footer_copyright_description', array(
+        'default' => __( 'Accessible Bootstrap  WordPress Theme', 'wp-accessible-starter' ),
+        'sanitize_callback' => 'wp_filter_nohtml_kses',
+    ) );
+    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'footer_copyright_description', array(
+        'label' => __( 'Description Copyright', 'wp-accessible-starter' ),
+        'section'    => 'title_tagline',
+        'settings'   => 'footer_copyright_description',
+        'type' => 'text'
+    ) ) );
+
     //Style Preset
     $wp_customize->add_section(
         'typography',

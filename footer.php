@@ -18,9 +18,10 @@
 		<?php get_template_part( 'footer-widget' ); ?>
 		<div class="container py-1">
             <div class="site-info">
-                &copy; <?php echo date('Y'); ?> <?php echo '<a href="'.home_url().'">'.get_bloginfo('name').'</a>'; ?>
-                <span class="sep"> | Seu negócio ao alcance de todos</span>
-
+				&copy; <?php echo date('Y'); ?> <?php echo '<a href="'.home_url().'">'.get_bloginfo('name').'</a>'; ?>
+				<?php if(!empty(get_theme_mod('footer_copyright_description'))): ?>
+					<span> | <?= get_theme_mod('footer_copyright_description'); ?></span>
+				<?php endif; ?>
             </div><!-- close .site-info -->
 		</div>
 	</footer><!-- #colophon -->
