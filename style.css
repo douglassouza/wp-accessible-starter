@@ -81,13 +81,11 @@ template {
 
 a {
   background-color: transparent;
-  color: inherit;
 }
 
 a:active,
 a:hover {
   outline: 0;
-  color: inherit;
 }
 
 dfn {
@@ -605,6 +603,7 @@ a.page-scroller {
 
 .accessibility a {
   font-size: 14px;
+  color: inherit;
 }
 
 /*--------------------------------------------------------------
