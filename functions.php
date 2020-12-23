@@ -121,7 +121,7 @@ function wp_accessible_starter_widgets_init() {
         'name'          => esc_html__( 'Header Right', 'wp-accessible-starter' ),
         'id'            => 'header-right',
         'description'   => esc_html__( 'Add widgets here.', 'wp-accessible-starter' ),
-        'before_widget' => '<section id="%1$s" class="widget m-0 d-none d-lg-block %2$s">',
+        'before_widget' => '<section id="%1$s" class="widget m-0 d-none d-lg-block mx-3 %2$s">',
         'after_widget'  => '</section>',
         'before_title'  => '<h3 class="widget-title">',
         'after_title'   => '</h3>',
