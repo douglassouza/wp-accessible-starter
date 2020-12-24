@@ -264,6 +264,16 @@ h3.widget-title {
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
   background: #fff;
   /* Fallback for when there is no custom background color defined. */
@@ -357,12 +367,7 @@ a.page-scroller {
     margin: 0 auto;
   }
 }
-/*--------------------------------------------------------------
-## Links
---------------------------------------------------------------*/
-.link-anchor {
-  scroll-margin-top: 50px;
-}
+
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/

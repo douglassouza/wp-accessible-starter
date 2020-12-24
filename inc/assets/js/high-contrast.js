@@ -10,7 +10,7 @@
 
     document.getElementById('btn-contrast').addEventListener('click', function (e) {
         e.preventDefault();
-        
+        console.log('tete');
         if(!body.classList.contains('contrast')) {
             enableHighContrast();
         } else {
