@@ -22,7 +22,8 @@ Tags: blog, custom-menu, featured-images, threaded-comments, translation-ready, 
 # Forms
 # Navigation
 	## Links
-	## Menus
+  ## Menus
+  ## Scroll Top
 # Accessibility
 # Alignments
 # Clearings
@@ -565,6 +566,36 @@ a.page-scroller {
 .post-navigation .nav-previous a:hover,
 .post-navigation .nav-next a:hover {
   background: #eee none repeat scroll 0 0;
+}
+
+/*--------------------------------------------------------------
+## Scroll Top
+--------------------------------------------------------------*/
+#content {
+  position: relative;
+}
+
+.scroll-top {
+  position: absolute; /* relative to its positioned <main> parent */
+  top: 120vh; /* starts below the bottom of the screen */
+  bottom: 1rem; /* stops scrolling before the end */
+  right: 1rem; /* offset from right hand side */
+}
+
+.scroll-top .scroll-top-link {
+  position: sticky; /* 'relative' until element reaches... */
+  top: 93vh; /* 90% viewport height from the top, when it becomes 'fixed' - until its container toggles it back to 'relative' */
+  text-decoration:none;
+  height: 50px;
+  line-height: 50px;
+  width: 50px;
+  font-size: 40px;
+  font-weight:700;
+  opacity:.3;
+}
+
+.scroll-top-link:hover {
+  opacity: initial;
 }
 
 /*--------------------------------------------------------------

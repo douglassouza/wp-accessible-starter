@@ -13,6 +13,11 @@
 <?php if(!is_page_template( 'blank-page.php' ) && !is_page_template( 'blank-page-with-container.php' )): ?>
 			</div><!-- .row -->
 		</div><!-- .container -->
+		<?php if(get_theme_mod('scroll-top')): ?>
+		<div class="scroll-top"> <!--scrollbar at the end of main-->
+			<a class="scroll-top-link text-center rounded-circle fas fa-angle-up" href="#scrolltop"><span class="sr-only"><?= __('Back to top', 'wp-accessible-starter'); ?></span></a> <!--href="#" navigates to the top of the page-->
+		</div>
+		<?php endif; ?>
 	</div><!-- #content -->
 	<footer id="colophon" class="site-footer text-center link-anchor" role="contentinfo">
 		<?php get_template_part( 'footer-widget' ); ?>

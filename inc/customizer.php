@@ -240,6 +240,17 @@ function wp_accessible_starter_customize_register( $wp_customize ) {
         'type'     => 'checkbox',
     ) ) );
 
+    $wp_customize->add_setting( 'scroll-top', array(
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'themeslug_sanitize_checkbox',
+    ) );
+    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'scroll-top', array(
+        'settings' => 'scroll-top',
+        'label'    => __('Enable Button Scroll Top', 'wp-accessible-starter'),
+        'section'    => 'accessibility',
+        'type'     => 'checkbox',
+    ) ) );
+
     
     /*edit_theme_options*/
     $wp_customize->add_setting( 'mode_maintenance', array(
@@ -355,7 +366,9 @@ function wp_accessible_starter_customizer_css()
         }
 
         footer#colophon,
-        #nav-accessibility { 
+        #nav-accessibility,
+        .scroll-top-link,
+        .scroll-top-link:hover { 
             background-color: <?php echo esc_attr( $footer_bg_color ); ?>;
             color: <?php echo esc_attr( $footer_text_color ); ?>; 
         }
