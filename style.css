@@ -305,7 +305,7 @@ table {
 --------------------------------------------------------------*/
 header#masthead {
   margin-bottom: 0;
-  padding: .74rem 1rem;
+  padding: .75rem 0;
 }
 
 .navbar-brand > a {
@@ -397,8 +397,9 @@ a.page-scroller {
   height: auto;
 }
 
-.navbar-toggle .icon-bar {
-  background: #000 none repeat scroll 0 0;
+.navbar-toggler {
+  font-size: 1.75rem;
+  color: inherit;
 }
 
 .dropdown-menu .dropdown-toggle::after {
@@ -497,6 +498,10 @@ a.page-scroller {
   }
 }
 @media screen and (max-width: 991px) {
+  #main-nav {
+    margin: .75rem -15px 0 -15px;
+  }
+
   .navbar-nav .dropdown-menu {
     border: medium none;
     margin-left: 1.250rem;
@@ -505,6 +510,10 @@ a.page-scroller {
 
   .dropdown-menu li a {
     padding: 0;
+  }
+
+  #masthead .navbar-nav > li {
+    padding: 0 15px;
   }
 
   #masthead .navbar-nav > li > a {
