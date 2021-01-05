@@ -310,7 +310,6 @@ header#masthead {
 
 .navbar-brand > a {
   color: rgba(0, 0, 0, 0.9);
-  font-size: 1.1rem;
   outline: medium none;
   text-decoration: none;
   color: inherit;
@@ -377,7 +376,7 @@ a.page-scroller {
   padding-right: 0;
 }
 
-#masthead .navbar-nav > li > a {
+#masthead .navbar-nav > li a {
   color: inherit;
   padding: 0.5rem;
 }
@@ -425,7 +424,8 @@ a.page-scroller {
     display: block;
 }
 
-.dropdown.menu-item-has-children .dropdown.menu-item-has-children>a:after {
+.dropdown.menu-item-has-children .dropdown.menu-item-has-children>a:after,
+.dropdown-toggle::after {
     display: block;
     content: " ";
     float: right;
@@ -434,9 +434,9 @@ a.page-scroller {
     border-color: transparent;
     border-style: solid;
     border-width: 5px 0 5px 5px;
-    border-left-color: #ccc;
+    border-left-color: inherit;
     margin-top: 5px;
-    margin-right: -10px;
+    transform: rotate(90deg);
 }
 
 .dropdown.menu-item-has-children .dropdown.menu-item-has-children:hover>a:after {
@@ -512,13 +512,27 @@ a.page-scroller {
     padding: 0;
   }
 
+  .show > .dropdown-toggle::after {
+    transform: rotate(-90deg);
+  }
+
   #masthead .navbar-nav > li {
     padding: 0 15px;
   }
 
-  #masthead .navbar-nav > li > a {
-    padding-bottom: 0.625rem;
-    padding-top: 0.313rem;
+  #masthead .navbar-nav > li a {
+    padding-bottom: 0.938rem;
+    padding-top: 0.938rem;
+    font-size: 1.2rem;
+  }
+
+  #masthead .navbar-nav > li > ul {
+    margin: 0 -15px;
+    border-radius: 0;
+  }
+
+  #masthead .navbar-nav > li > ul > li {
+    padding: 0 15px 0 30px;
   }
 
   .navbar-light .navbar-toggler {
@@ -1068,13 +1082,6 @@ footer#colophon {
 
 .copyright a, footer#colophon a {
   color: inherit;
-}
-
-@media screen and (max-width: 767px) {
-  #masthead .navbar-nav > li > a {
-    padding-bottom: 0.938rem;
-    padding-top: 0.938rem;
-  }
 }
 /*--------------------------------------------------------------
 # Media Query
