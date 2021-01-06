@@ -389,7 +389,6 @@ function wp_accessible_starter_customizer_css()
         header#masthead .navbar-nav > li ul {
             background-color: <?php echo esc_attr($footer_bg_color); ?>;
             color: <?php echo esc_attr($footer_text_color); ?>;
-            border-left-color: <?php echo esc_attr($footer_text_color); ?>;
         }
     </style>
 <?php

@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>  tabindex= "0">
 	<div class="post-thumbnail">
 		<?php the_post_thumbnail(); ?>
 	</div>

@@ -126,7 +126,7 @@
                         </a>
                     </div>
                 <?php else : ?>
-                    <div id="page-sub-header" <?php if (has_header_image()) { ?>style="background-image: url('<?php header_image(); ?>');" <?php } ?>>
+                    <div id="page-sub-header"  tabindex= "0" <?php if (has_header_image()) { ?>style="background-image: url('<?php header_image(); ?>');" <?php } ?>>
                         <div class="container">
                             <h1>
                                 <?php
