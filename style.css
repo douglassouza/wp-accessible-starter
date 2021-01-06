@@ -436,7 +436,14 @@ a.page-scroller {
     border-width: 5px 0 5px 5px;
     border-left-color: inherit;
     margin-top: 5px;
-    transform: rotate(90deg);
+}
+
+.dropdown-toggle::after {
+  transform: rotate(90deg);
+}
+
+.dropdown.menu-item-has-children .dropdown.menu-item-has-children>a:after {
+  transform: rotate(-90deg);
 }
 
 .dropdown.menu-item-has-children .dropdown.menu-item-has-children:hover>a:after {
@@ -533,6 +540,11 @@ a.page-scroller {
 
   #masthead .navbar-nav > li > ul > li {
     padding: 0 15px 0 30px;
+  }
+
+  #masthead .navbar-nav > li > ul > li ul {
+    display: block;
+    padding-left: 15px;
   }
 
   .navbar-light .navbar-toggler {
@@ -828,7 +840,9 @@ a img.aligncenter {
   color: #9a9a9a;
 }
 
-.page .entry-header .entry-title {
+.page .entry-header,
+.page .entry-content,
+.page .entry-footer {
   padding-left: 15px;
   padding-right: 15px;
 }
