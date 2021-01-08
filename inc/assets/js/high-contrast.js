@@ -3,23 +3,24 @@
     let body = document.getElementsByTagName("body")[0];
 
     function enableHighContrast() {
+        console.log('enable contrast');
         body.classList.add('contrast');
         html.classList.add('font-size');
-        document.cookie = 'high-contrast=1';        
+        document.cookie = 'high-contrast=1; path=/';        
     }
 
     document.getElementById('btn-contrast').addEventListener('click', function (e) {
         e.preventDefault();
-        console.log('tete');
+
         if(!body.classList.contains('contrast')) {
             enableHighContrast();
         } else {
             body.classList.remove('contrast');
             html.classList.remove('font-size');
-            document.cookie = 'high-contrast=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+            document.cookie = 'high-contrast=0; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
         }
     });
-
+    
     if (document.cookie.split(';').some(function(item) {
         return item.trim().indexOf('high-contrast=1') == 0
     })) {
