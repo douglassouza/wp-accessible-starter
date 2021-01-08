@@ -3,7 +3,6 @@
     let body = document.getElementsByTagName("body")[0];
 
     function enableHighContrast() {
-        console.log('enable contrast');
         body.classList.add('contrast');
         html.classList.add('font-size');
         document.cookie = 'high-contrast=1; path=/';        
