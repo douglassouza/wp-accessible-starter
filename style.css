@@ -889,9 +889,10 @@ a img.aligncenter {
 }
 
 .container-fluid .wp-block-group,
-.container-fluid .wp-block-cover {
-  margin-left: -15px;
-  margin-right: -15px;
+.container-fluid .wp-block-cover,
+.container-fluid .entry-content > .wp-block-image {
+  margin-left: -15px!important;
+  margin-right: -15px!important;
   width: auto;
 }
 
