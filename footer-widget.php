@@ -5,10 +5,10 @@ if ( is_active_sidebar( 'footer-1' ) || is_active_sidebar( 'footer-2' ) || is_ac
             <div class="container">
                 <div class="row">
                     <?php if ( is_active_sidebar( 'footer-1' )) : ?>
-                        <div class="col-12 col-md-4"><?php dynamic_sidebar( 'footer-1' ); ?></div>
+                        <div class="col-12 col-md-<?= is_active_sidebar( 'footer-2' ) ? is_active_sidebar( 'footer-3' ) ? '4' : '6' : '12' ?>"><?php dynamic_sidebar( 'footer-1' ); ?></div>
                     <?php endif; ?>
                     <?php if ( is_active_sidebar( 'footer-2' )) : ?>
-                        <div class="col-12 col-md-4"><?php dynamic_sidebar( 'footer-2' ); ?></div>
+                        <div class="col-12 col-md-<?= is_active_sidebar( 'footer-3' ) ? '4' : '6' ?>"><?php dynamic_sidebar( 'footer-2' ); ?></div>
                     <?php endif; ?>
                     <?php if ( is_active_sidebar( 'footer-3' )) : ?>
                         <div class="col-12 col-md-4"><?php dynamic_sidebar( 'footer-3' ); ?></div>
